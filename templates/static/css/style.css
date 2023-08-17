@@ -1,0 +1,100 @@
+.header{
+    background-color: #a5090a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.slider{
+    padding-top: 90px;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+.navbar{
+    box-shadow: none!important;
+    background-color: #a5090a!important;
+}
+.navbar-brand{
+    margin-right: 80px;
+}
+.motive::after {
+    content: '';
+    position: absolute;
+    left: 45%; 
+    transform: translateX(-50%); 
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+  }
+  
+.motive:hover::after {
+    width: 20%;
+}
+
+.motive {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+}
+
+
+@keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(10px);
+    }
+}
+  
+.hotline {
+    animation-name: shake;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite; /* Lặp vô hạn */
+}
+
+.top-footer{
+    background-color: #a5090a;
+    padding-top: 20px;
+}
+
+.top-footer h6{
+    color: #ffad13;
+}
+
+.top-footer p{
+    color: #fff7a7;
+}
+
+.hotline{
+    font-size: 30px;
+    color: white!important;
+}
+
+.bottom-footer{
+    background-color: #470b04;
+    padding-top: 20px;  
+    padding-bottom: 20px;
+    color: white;
+}
+
+.time{
+    list-style: none;
+    padding-left: 0;
+    color: #fff7a7;
+}
+
+.time li:last-child{
+    color: #ffad13;
+}
