@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .forms import registerForm, loginForm
 from django.views import View
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
@@ -28,10 +29,19 @@ class registerUser(View):
 class loginUser(View):
     def get(self, request):
         lF = loginForm
-        return render(request, 'home.html')
+        return render(request, 'base/login.html', {'lF': lF})
+    
     def post(self, request):
-        username = 'user_login'
-        password = 'user_password'
+        username = request.POST['username']
+        password = request.POST['password']
 
-        return HttpResponse(username)
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return render(request, 'home.html')
+        else:
+            return HttpResponse('login fail')
         
+def logoutUser(request):
+    logout(request)
