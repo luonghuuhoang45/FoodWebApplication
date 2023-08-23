@@ -98,3 +98,7 @@
 .time li:last-child{
     color: #ffad13;
 }
+
+.form-control{
+    background-image: url("https://cdn.discordapp.com/attachments/1066020937130065960/1141707791791304744/slider-1.jpg");
+}
